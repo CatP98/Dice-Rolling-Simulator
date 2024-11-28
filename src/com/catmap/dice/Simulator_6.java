@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class Simulator {
+public class Simulator_6 {
     public static void main(String[] args) {
         System.out.println("Welcome welcome to the most amazing dice rolling simulator ever!");
 
