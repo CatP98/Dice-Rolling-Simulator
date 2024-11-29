@@ -9,7 +9,7 @@ This project is a dice-rolling simulator tailored for role-playing games (RPGs).
   - 9 -> Success
   - 8 | 7 | 6 -> Partial Success
   - 5 | 4 | 3 -> Failure
-  - 1 | 2 -> critical Failure
+  - 1 | 2 -> Critical Failure
 
 ## Features
 - Roll a 10-sided dice (1-10 values).
@@ -20,18 +20,19 @@ This project is a dice-rolling simulator tailored for role-playing games (RPGs).
 
 ## To-Do List
 - [x] Create the base simulator for a 6-sided dice.
-- [ ] Implement a 10-sided dice simulation.
-- [ ] Allow the user to choose the number of rolls (up to 10).
+- [x] Implement a 10-sided dice simulation.
+- [x] Allow the user to choose the number of rolls (up to 10).
 - [ ] Store the highest and lowest values for each session.
-- [ ] Define and implement meanings for dice values:
-    - [ ] Map meanings for value rolled (Key: dice number : Value: "meaning of Value")
+  - display the highest and the lowest at the end of results . p.e.: highest 10 - critical succes / lowest 3 - Failure
+- [x] Define and implement meanings for dice values:
+    - [x] Map meanings for value rolled (Key: dice number : Value: "meaning of Value")
 - [ ] Display results including:
     - Total rolls
     - Highest and lowest values of the session
     - Associated meanings
 - [ ] Add error handling for invalid input.
 - [ ] Write unit tests to ensure accuracy of dice rolls and logic.
-- [ ] Enhance the user interface for better readability (ASCII art for the dice rolls).
+- [x] Enhance the user interface for better readability (ASCII art for the dice rolls).
 - [ ] Update the README with instructions and examples.
 
 ---
