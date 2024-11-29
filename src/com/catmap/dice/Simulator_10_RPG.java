@@ -45,14 +45,36 @@ public class Simulator_10_RPG {
                 if (totalRolls + nbOfRolls <= 10) {
                     System.out.println("About to roll " + nbOfRolls + " dice...");
 
+                    // Declare variables for highest and lowest rolls
+                    int highestKey = Integer.MIN_VALUE; // Initialize to the smallest possible integer value
+                    int lowestKey = Integer.MAX_VALUE;  // Initialize to the largest possible integer value
+
                     // Roll the dice and show the results
-                    for(var i = 0; i < nbOfRolls; i++){
+                    for (int i = 0; i < nbOfRolls; i++) {
                         int rolledNumber = rand.nextInt(10) + 1;
+
+                        System.out.println("--------------------------------------------------------------------------------------");
                         System.out.println("\nRolling dice " + (i + 1) + "...");
                         System.out.println(display(rolledNumber, diceMeanings.get(rolledNumber)));
+                        System.out.println("--------------------------------------------------------------------------------------");
+
+                        // Update total rolls count
                         totalRolls++;
+
+                        // Update the highest roll if the current roll is higher
+                        if (rolledNumber > highestKey) {
+                            highestKey = rolledNumber;
+                        }
+
+                        // Update the lowest roll if the current roll is lower
+                        if (rolledNumber < lowestKey) {
+                            lowestKey = rolledNumber;
+                        }
                     }
 
+                    // After all rolls, display the highest and lowest roll results
+                    System.out.println("\nHighest roll: " + display(highestKey, diceMeanings.get(highestKey)));
+                    System.out.println("Lowest roll: " + display(highestKey, diceMeanings.get(highestKey)));
                     System.out.println("number of rolls " + totalRolls);
 
                     // Ask if the user wants to roll again
@@ -78,25 +100,25 @@ public class Simulator_10_RPG {
     public static String display(int key, String value) { //why static?
         switch (key) {
             case 1:
-                return "Critical Failure \n" + value + "\nA disastrous outcome, better luck next time!";
+                return "Critical Failure \n" + value + "\nA disastrous outcome, better luck next time!\n";
             case 2:
-                return "Critical Failure \n" + value + "\nThis was a terrible roll, something went horribly wrong!";
+                return "Critical Failure \n" + value + "\nThis was a terrible roll, something went horribly wrong!\n";
             case 3:
-                return "Failure \n" + value + "\nNot quite what you were hoping for. Try again!";
+                return "Failure \n" + value + "\nNot quite what you were hoping for. Try again!\n";
             case 4:
-                return "Failure \n" + value + "\nNot your best roll, but the adventure continues.";
+                return "Failure \n" + value + "\nNot your best roll, but the adventure continues.\n";
             case 5:
-                return "Failure \n" + value + "\nYou failed, but it's not the end of the road.";
+                return "Failure \n" + value + "\nYou failed, but it's not the end of the road.\n";
             case 6:
-                return "Partial Success \n" + value + "\nYou've made some progress, but there's more work to do!";
+                return "Partial Success \n" + value + "\nYou've made some progress, but there's more work to do!\n";
             case 7:
-                return "Partial Success \n" + value + "\nNot perfect, but you're getting closer!";
+                return "Partial Success \n" + value + "\nNot perfect, but you're getting closer!\n";
             case 8:
-                return "Partial Success \n" + value + "\nYou're almost there. Success is just around the corner!";
+                return "Partial Success \n" + value + "\nYou're almost there. Success is just around the corner!\n";
             case 9:
-                return "Success \n" + value + "\nCongratulations! You've succeeded!";
+                return "Success \n" + value + "\nCongratulations! You've succeeded!\n";
             case 10:
-                return "Critical Success \n" + value + "\nA remarkable success, you're a true hero!";
+                return "Critical Success \n" + value + "\nA remarkable success, you're a true hero!\n";
             default:
                 return "\nInvalid number of sides\n";
         }
